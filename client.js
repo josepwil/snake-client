@@ -14,6 +14,12 @@ const connect = function() {
   conn.on('data', (data) => {
     console.log(data);
   })
+  // event handling for when we connect to the game server
+  conn.on('connect', () => {
+    console.log('Succesfully connected to game server')
+    // writing message to the server 
+    conn.write('Name: JRW');
+  })
 
   return conn;
 }
